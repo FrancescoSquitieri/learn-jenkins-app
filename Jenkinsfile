@@ -52,7 +52,7 @@ pipeline {
               npm i serve
               npx serve -s build &
               sleep 10
-              npm playwright test
+              npx playwright test
             '''
           }
         }
