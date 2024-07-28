@@ -50,7 +50,8 @@ pipeline {
             sh '''
               echo E2E Test
               npm i serve
-              npx serve -s build
+              npx serve -s build &
+              sleep 10
               npm playwright test
             '''
           }
