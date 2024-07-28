@@ -43,13 +43,14 @@ pipeline {
             docker {
               image 'mcr.microsoft.com/playwright:v1.45.1-jammy'
               reuseNode true
+              args '-u root:root'
             }
           }
 
           steps {
             sh '''
               echo E2E Test
-              npm i -g serve
+              npm i serve
               serve -s build
               npm playwright test
             '''
